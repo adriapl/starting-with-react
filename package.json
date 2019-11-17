@@ -2,6 +2,7 @@
   "name": "starting-with-react",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://adriapl.github.io/starting-with-react",
   "dependencies": {
     "gh-pages": "^2.1.1",
     "react": "^16.11.0",
