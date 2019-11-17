@@ -31,6 +31,7 @@ class App extends Component {
 
     return (
       <div className="App">
+        <h1>Search a user by name</h1>
         <SearchBox
           placeholder="User to search."
           handleChange={this.handleChange}
