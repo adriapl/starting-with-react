@@ -6,7 +6,7 @@ export const CardList = props => {
   return (
     <div className="card-list">
       {props.users.map(user => (
-        <Card user={user} />
+        <Card key={user.id} user={user} />
       ))}
     </div>
   );
