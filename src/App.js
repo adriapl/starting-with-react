@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { CardList } from "./components/card-list/card-list.component";
+import { SearchBox } from "./components/searchbox/search-box.component";
 import "./App.css";
 
 class App extends Component {
@@ -7,7 +8,8 @@ class App extends Component {
     super();
 
     this.state = {
-      users: []
+      users: [],
+      searchField: ""
     };
   }
 
@@ -18,9 +20,20 @@ class App extends Component {
   }
 
   render() {
+    const { users, searchField } = this.state;
+    const filteredUsers = users.filter(user =>
+      user.name.toLowerCase().includes(searchField.toLowerCase())
+    );
+
     return (
       <div className="App">
-        <CardList users={this.state.users}></CardList>
+        <SearchBox
+          placeholder="User to search."
+          handleChance={event =>
+            this.setState({ searchField: event.target.value })
+          }
+        />
+        <CardList users={filteredUsers}></CardList>
       </div>
     );
   }
